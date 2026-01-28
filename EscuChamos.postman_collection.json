@@ -1,0 +1,2538 @@
+{
+  "info": {
+    "_postman_id": "cc6eaae7-d634-43fb-b89e-5a60fb653deb",
+    "name": "EscuChamos",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "32348155",
+    "_collection_link": "https://go.postman.co/collection/32349570-cc6eaae7-d634-43fb-b89e-5a60fb653deb?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register",
+          "item": [
+            {
+              "name": "register",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"Ed\",\r\n    \"username\": \"admin\",\r\n    \"password\": \"ed\",\r\n    \"email\": \"edison09universidad1@gmail.com\",\r\n    \"birthdate\": \"2003-12-09\",\r\n    \"checkbox\": false\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}register/",
+                  "host": [
+                    "{{url}}register"
+                  ],
+                  "path": [
+                    ""
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "email verification",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"verification_code\": \"717368\",\r\n    \"user_email\": \"susanb140903@gmail.com\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}email/verification/",
+                  "host": [
+                    "{{url}}email"
+                  ],
+                  "path": [
+                    "verification",
+                    ""
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "resend verification code",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"user_email\": \"valentinasharait@gmail.com\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}resend/verification/code/",
+                  "host": [
+                    "{{url}}resend"
+                  ],
+                  "path": [
+                    "verification",
+                    "code",
+                    ""
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Recover Account",
+          "item": [
+            {
+              "name": "recover account",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"user_email\": \"valentinasharait@gmail.com\"\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}recover/account/",
+                  "host": [
+                    "{{url}}recover"
+                  ],
+                  "path": [
+                    "account",
+                    ""
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "recover account change password",
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"user_email\": \"susandepablos14@gmail.com\",\r\n    \"new_password\": \"\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}recover/account/change/password/",
+                  "host": [
+                    "{{url}}recover"
+                  ],
+                  "path": [
+                    "account",
+                    "change",
+                    "password",
+                    ""
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "recover account verification",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"verification_code\": \"\",\r\n    \"user_email\": \"susandepablos14@gmail.com\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}recover/account/verification/",
+                  "host": [
+                    "{{url}}recover"
+                  ],
+                  "path": [
+                    "account",
+                    "verification",
+                    ""
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\": \"edison09universidad@gmail.com\",\r\n    \"password\": \"edi433518\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}login/",
+              "host": [
+                "{{url}}login"
+              ],
+              "path": [
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "logout",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"session_key\": \"upbr945i9latt73bmkf6d4bhc0ci3czg\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}logout/",
+              "host": [
+                "{{url}}logout"
+              ],
+              "path": [
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Notifications",
+      "item": [
+        {
+          "name": "live notifications",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}notifications/2/",
+              "host": [
+                "{{url}}notifications"
+              ],
+              "path": [
+                "2",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "read notifications",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}notifications/read/",
+              "host": [
+                "{{url}}notifications"
+              ],
+              "path": [
+                "read",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "seen notifications",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}notifications/seen/",
+              "host": [
+                "{{url}}notifications"
+              ],
+              "path": [
+                "seen",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "index",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "{{url}}notification/",
+              "host": [
+                "{{url}}notification"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "receiver_user_id",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "type",
+                  "value": "reaction",
+                  "disabled": true
+                },
+                {
+                  "key": "pag",
+                  "value": "5",
+                  "disabled": true
+                },
+                {
+                  "key": "page",
+                  "value": "",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "show",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{url}}notifications/",
+              "host": [
+                "{{url}}notifications"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "receiver_user_id",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "type",
+                  "value": "blocked_post",
+                  "disabled": true
+                },
+                {
+                  "key": "pag",
+                  "value": "100",
+                  "disabled": true
+                },
+                {
+                  "key": "page",
+                  "value": "1",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "view notification",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"model\":\"comment\",\r\n    \"object_id\":43,\r\n    \"id\": 105\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}notifications/is-read/",
+              "host": [
+                "{{url}}notifications"
+              ],
+              "path": [
+                "is-read",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "count notification",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "type",
+                  "value": "report_",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}notification/count/",
+              "host": [
+                "{{url}}notification"
+              ],
+              "path": [
+                "count",
+                ""
+              ],
+              "query": [
+                {
+                  "key": "",
+                  "value": null,
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"model\":\"post\",\r\n    \"object_id\":27\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}notifications/",
+              "host": [
+                "{{url}}notifications"
+              ],
+              "path": [
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "Profile",
+          "item": [
+            {
+              "name": "change password",
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "{{token}}"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"old_password\": \"edi30433518\",\r\n    \"new_password\": \"edi30433518\"\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}user/change/password/",
+                  "host": [
+                    "{{url}}user"
+                  ],
+                  "path": [
+                    "change",
+                    "password",
+                    ""
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "upload photo",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "{{token}}"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "file",
+                      "type": "file",
+                      "src": "/D:/TODO/SUSAN/Imagenes/71CkERjGlnL.jpg"
+                    },
+                    {
+                      "key": "type",
+                      "value": "profile",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{url}}user/upload/photo/",
+                  "host": [
+                    "{{url}}user"
+                  ],
+                  "path": [
+                    "upload",
+                    "photo",
+                    ""
+                  ]
+                },
+                "description": "se le coloca cualquiera de los dos tipos  \n1.- profile: Que seria para perfil  \n2.-cover: Que seria para portada"
+              },
+              "response": []
+            },
+            {
+              "name": "delete photo",
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "{{token}}"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "type",
+                      "value": "cover",
+                      "type": "text",
+                      "disabled": true
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{url}}user/upload/photo/",
+                  "host": [
+                    "{{url}}user"
+                  ],
+                  "path": [
+                    "upload",
+                    "photo",
+                    ""
+                  ]
+                },
+                "description": "Se elige que quiere eliminar  \n1.-cover: Foto portada  \n2.-profile: Foto perfil"
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Admin",
+          "item": [
+            {
+              "name": "delete user",
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "{{token}}"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}user/update/admin/14/",
+                  "host": [
+                    "{{url}}user"
+                  ],
+                  "path": [
+                    "update",
+                    "admin",
+                    "14",
+                    ""
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update group",
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "{{token}}"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"group_id\": 2\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}user/update/admin/4/",
+                  "host": [
+                    "{{url}}user"
+                  ],
+                  "path": [
+                    "update",
+                    "admin",
+                    "4",
+                    ""
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "index",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}user/?pag=10",
+              "host": [
+                "{{url}}user"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "pag",
+                  "value": "10"
+                },
+                {
+                  "key": "page",
+                  "value": "2",
+                  "disabled": true
+                },
+                {
+                  "key": "search",
+                  "value": "jhosmer Sanché",
+                  "disabled": true
+                },
+                {
+                  "key": "name",
+                  "value": "admin",
+                  "disabled": true
+                },
+                {
+                  "key": "email",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "phone_number",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "biography",
+                  "value": "",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "birthdate",
+                  "value": "",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "username",
+                  "value": "ad",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "show",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}user/1/",
+              "host": [
+                "{{url}}user"
+              ],
+              "path": [
+                "1",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\": null,\r\n    \"name\": null,\r\n    \"biography\": null,\r\n    \"email\": null,\r\n    \"phone_number\": null,\r\n    \"country_id\": \"\",\r\n    \"birthdate\": null\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}user/update/",
+              "host": [
+                "{{url}}user"
+              ],
+              "path": [
+                "update",
+                ""
+              ]
+            },
+            "description": "{  \n\"username\": null,  \n\"name\": null,  \n\"biography\": null,  \n\"email\": null,  \n\"phone_number\": null,  \n\"country_id\": null,  \n\"birthdate\": null  \n}"
+          },
+          "response": []
+        },
+        {
+          "name": "verify password",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"password\": \"edi30433518\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}user/verify/password/",
+              "host": [
+                "{{url}}user"
+              ],
+              "path": [
+                "verify",
+                "password",
+                ""
+              ]
+            },
+            "description": "{  \n\"username\": null,  \n\"name\": null,  \n\"biography\": null,  \n\"email\": null,  \n\"phone_number\": null,  \n\"country_id\": null,  \n\"birthdate\": null  \n}"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Follows",
+      "item": [
+        {
+          "name": "index",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}follow/?highlight_id=7",
+              "host": [
+                "{{url}}follow"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "pag",
+                  "value": "10",
+                  "disabled": true
+                },
+                {
+                  "key": "page",
+                  "value": "",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "followed_user_id",
+                  "value": "4",
+                  "disabled": true
+                },
+                {
+                  "key": "search_following",
+                  "value": "jesus dep",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "following_user_id",
+                  "value": "4",
+                  "disabled": true
+                },
+                {
+                  "key": "search_followed",
+                  "value": "admin",
+                  "disabled": true
+                },
+                {
+                  "key": "highlight_id",
+                  "value": "7"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "post",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"followed_user_id\": 1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}follow/",
+              "host": [
+                "{{url}}follow"
+              ],
+              "path": [
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "show",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}follow/4/",
+              "host": [
+                "{{url}}follow"
+              ],
+              "path": [
+                "4",
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Countries",
+      "item": [
+        {
+          "name": "index",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}country/",
+              "host": [
+                "{{url}}country"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "pag",
+                  "value": "1",
+                  "disabled": true
+                },
+                {
+                  "key": "page",
+                  "value": "30",
+                  "disabled": true
+                },
+                {
+                  "key": "name",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "abbreviation",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "dialing_code",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "iso",
+                  "value": "VE",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "show",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}country/2/",
+              "host": [
+                "{{url}}country"
+              ],
+              "path": [
+                "2",
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Statuses",
+      "item": [
+        {
+          "name": "index",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}status/?pag=2",
+              "host": [
+                "{{url}}status"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "pag",
+                  "value": "2"
+                },
+                {
+                  "key": "page",
+                  "value": "2",
+                  "disabled": true
+                },
+                {
+                  "key": "name",
+                  "value": "resuelto",
+                  "disabled": true
+                },
+                {
+                  "key": "description",
+                  "value": "",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "show",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}status/2/",
+              "host": [
+                "{{url}}status"
+              ],
+              "path": [
+                "2",
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Type posts",
+      "item": [
+        {
+          "name": "index",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}type-post/?pag=2",
+              "host": [
+                "{{url}}type-post"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "pag",
+                  "value": "2"
+                },
+                {
+                  "key": "page",
+                  "value": "2",
+                  "disabled": true
+                },
+                {
+                  "key": "name",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "description",
+                  "value": "",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "show",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}type-post/2/",
+              "host": [
+                "{{url}}type-post"
+              ],
+              "path": [
+                "2",
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Posts",
+      "item": [
+        {
+          "name": "index",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}post/?pag=2",
+              "host": [
+                "{{url}}post"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "pag",
+                  "value": "2"
+                },
+                {
+                  "key": "page",
+                  "value": "2",
+                  "disabled": true
+                },
+                {
+                  "key": "body",
+                  "value": "Hola esta es mi ",
+                  "disabled": true
+                },
+                {
+                  "key": "user_id",
+                  "value": "1",
+                  "disabled": true
+                },
+                {
+                  "key": "status_id",
+                  "value": "2",
+                  "disabled": true
+                },
+                {
+                  "key": "type_post_id",
+                  "value": "4",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "post",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "body",
+                  "value": "holi",
+                  "type": "text"
+                },
+                {
+                  "key": "type_post_id",
+                  "value": "4",
+                  "type": "text"
+                },
+                {
+                  "key": "post_id",
+                  "value": "1",
+                  "type": "text"
+                },
+                {
+                  "key": "file",
+                  "type": "file",
+                  "fileNotInWorkingDirectoryWarning": "This file isn't in your working directory. Teammates you share this request with won't be able to use this file. To make collaboration easier you can setup your working directory in Settings.",
+                  "filesNotInWorkingDirectory": [
+                    "/D:/TODO/SUSAN/Imagenes/todo/2ad91a1254d16407c219a0e9c3a23542.mp4"
+                  ],
+                  "src": "/D:/TODO/SUSAN/Imagenes/todo/2ad91a1254d16407c219a0e9c3a23542.mp4",
+                  "disabled": true
+                },
+                {
+                  "key": "file",
+                  "type": "file",
+                  "value": null,
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}post/",
+              "host": [
+                "{{url}}post"
+              ],
+              "path": [
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "body",
+                  "value": "uhhh",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}post/127/",
+              "host": [
+                "{{url}}post"
+              ],
+              "path": [
+                "127",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "show",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}post/60/",
+              "host": [
+                "{{url}}post"
+              ],
+              "path": [
+                "60",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}post/225/",
+              "host": [
+                "{{url}}post"
+              ],
+              "path": [
+                "225",
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Shares",
+      "item": [
+        {
+          "name": "index",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}share/?pag=2",
+              "host": [
+                "{{url}}share"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "2",
+                  "disabled": true
+                },
+                {
+                  "key": "user_id",
+                  "value": "1",
+                  "disabled": true
+                },
+                {
+                  "key": "pag",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "post",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"post_id\":1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}share/",
+              "host": [
+                "{{url}}share"
+              ],
+              "path": [
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "show",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}share/1/",
+              "host": [
+                "{{url}}share"
+              ],
+              "path": [
+                "1",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}share/1/",
+              "host": [
+                "{{url}}share"
+              ],
+              "path": [
+                "1",
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Comments",
+      "item": [
+        {
+          "name": "index",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}comment/?post_id=1&pag=10&highlight_id=16&comment_id=6",
+              "host": [
+                "{{url}}comment"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1",
+                  "disabled": true
+                },
+                {
+                  "key": "body",
+                  "value": "cu",
+                  "disabled": true
+                },
+                {
+                  "key": "post_id",
+                  "value": "1"
+                },
+                {
+                  "key": "status_id",
+                  "value": "1",
+                  "disabled": true
+                },
+                {
+                  "key": "pag",
+                  "value": "10"
+                },
+                {
+                  "key": "highlight_id",
+                  "value": "16"
+                },
+                {
+                  "key": "comment_id",
+                  "value": "6"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "post",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "body",
+                  "value": "pruebita 10",
+                  "type": "text"
+                },
+                {
+                  "key": "post_id",
+                  "value": "1",
+                  "type": "text"
+                },
+                {
+                  "key": "comment_id",
+                  "value": "6",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "file",
+                  "type": "file",
+                  "fileNotInWorkingDirectoryWarning": "This file isn't in your working directory. Teammates you share this request with won't be able to use this file. To make collaboration easier you can setup your working directory in Settings.",
+                  "filesNotInWorkingDirectory": [
+                    "/C:/Users/Edison/Pictures/pxfuel.jpg"
+                  ],
+                  "src": "/C:/Users/Edison/Pictures/pxfuel.jpg",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}comment/",
+              "host": [
+                "{{url}}comment"
+              ],
+              "path": [
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "body",
+                  "value": "",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}comment/4/",
+              "host": [
+                "{{url}}comment"
+              ],
+              "path": [
+                "4",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "show",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}comment/3/",
+              "host": [
+                "{{url}}comment"
+              ],
+              "path": [
+                "3",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}comment/38/",
+              "host": [
+                "{{url}}comment"
+              ],
+              "path": [
+                "38",
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Stories",
+      "item": [
+        {
+          "name": "index",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}story/?pag=1",
+              "host": [
+                "{{url}}story"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "2",
+                  "disabled": true
+                },
+                {
+                  "key": "user_id",
+                  "value": "6",
+                  "disabled": true
+                },
+                {
+                  "key": "status_id",
+                  "value": "1",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "pag",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "post",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "content",
+                  "value": "jujuju",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": "/C:/Users/Gordo/Desktop/fotos/mi primera.jpg"
+                },
+                {
+                  "key": "post_id",
+                  "value": "285",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}story/",
+              "host": [
+                "{{url}}story"
+              ],
+              "path": [
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "show",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}story/8/",
+              "host": [
+                "{{url}}story"
+              ],
+              "path": [
+                "8",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "show grouped",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}story/grouped/8/",
+              "host": [
+                "{{url}}story"
+              ],
+              "path": [
+                "grouped",
+                "8",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "archive",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}story/9/",
+              "host": [
+                "{{url}}story"
+              ],
+              "path": [
+                "9",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}story/8/",
+              "host": [
+                "{{url}}story"
+              ],
+              "path": [
+                "8",
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Story View",
+      "item": [
+        {
+          "name": "index",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}story-view/?pag=10&page=1&story_id=2",
+              "host": [
+                "{{url}}story-view"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "pag",
+                  "value": "10"
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "story_id",
+                  "value": "2"
+                },
+                {
+                  "key": "user_id",
+                  "value": null,
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "count story view",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"story_id\":5\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}story-view/count/",
+              "host": [
+                "{{url}}story-view"
+              ],
+              "path": [
+                "count",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "post",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"story_id\": 1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}story-view/",
+              "host": [
+                "{{url}}story-view"
+              ],
+              "path": [
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Reactions",
+      "item": [
+        {
+          "name": "Index",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}reaction/?model=post&object_id=1&highlight_id=36",
+              "host": [
+                "{{url}}reaction"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "pag",
+                  "value": "2",
+                  "disabled": true
+                },
+                {
+                  "key": "page",
+                  "value": "",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "model",
+                  "value": "post"
+                },
+                {
+                  "key": "object_id",
+                  "value": "1"
+                },
+                {
+                  "key": "highlight_id",
+                  "value": "36"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "show",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}reaction/1/",
+              "host": [
+                "{{url}}reaction"
+              ],
+              "path": [
+                "1",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "post",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"model\": \"post\",\r\n    \"object_id\": 22\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}reaction/",
+              "host": [
+                "{{url}}reaction"
+              ],
+              "path": [
+                ""
+              ]
+            },
+            "description": "{  \n\"model\": \"\",  \n\"object_id\": 6  \n}\n\nmodel:\n\n\\-post\n\n\\-comment\n\n\\-history"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Reports",
+      "item": [
+        {
+          "name": "index",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}report/?pag=3&model=post&object_id=57",
+              "host": [
+                "{{url}}report"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "pag",
+                  "value": "3"
+                },
+                {
+                  "key": "page",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "observation",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "model",
+                  "value": "post"
+                },
+                {
+                  "key": "object_id",
+                  "value": "57"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "index grouped",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}report/grouped/?pag=10",
+              "host": [
+                "{{url}}report"
+              ],
+              "path": [
+                "grouped",
+                ""
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "pag",
+                  "value": "10"
+                },
+                {
+                  "key": "object_type",
+                  "value": "post",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "show",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}report/1/",
+              "host": [
+                "{{url}}report"
+              ],
+              "path": [
+                "1",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "post",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"model\": \"post\",\r\n    \"object_id\": 20,\r\n    \"observation\": \"Contenido inadecuado\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}report/",
+              "host": [
+                "{{url}}report"
+              ],
+              "path": [
+                ""
+              ]
+            },
+            "description": "{  \n\"model\": \"\",  \n\"object_id\": 31,  \n\"observation\": \"Contenido inadecuado\"  \n}\n\nmodel:\n\n\\-post\n\n\\-comment\n\n\\-history"
+          },
+          "response": []
+        },
+        {
+          "name": "update",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"model\": \"post\",\r\n    \"object_id\": 1,\r\n    \"status_id\": 5\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}report/update/status/",
+              "host": [
+                "{{url}}report"
+              ],
+              "path": [
+                "update",
+                "status",
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Groups",
+      "item": [
+        {
+          "name": "index",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}group/",
+              "host": [
+                "{{url}}group"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "pag",
+                  "value": "1",
+                  "disabled": true
+                },
+                {
+                  "key": "page",
+                  "value": "2",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
